@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg4y858e7o6ps"]
+
+[ext_resource type="Script" uid="uid://ctymlxf15sbeo" path="res://door_y.gd" id="1_6wrbx"]
+[ext_resource type="Texture2D" uid="uid://bef7ycifmy0uv" path="res://Assets/SunnyLand/Props/doorY.png" id="2_7diqf"]
+[ext_resource type="Texture2D" uid="uid://bntejwfh6ac75" path="res://Assets/SunnyLand/Props/door-opened.png" id="3_vos2j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7diqf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7diqf")
+}],
+"loop": true,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vos2j")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vos2j"]
+size = Vector2(11, 34)
+
+[node name="DoorY" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_6wrbx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.909091, 1)
+sprite_frames = SubResource("SpriteFrames_7diqf")
+animation = &"close"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 0)
+shape = SubResource("RectangleShape2D_vos2j")

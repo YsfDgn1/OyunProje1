@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7gl6fu0wnle5"]
+
+[ext_resource type="AudioStream" uid="uid://bjvwrjy5jrxxd" path="res://Assets/Props Items and VFX/VFX/Music.ogg" id="1_efk4j"]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_efk4j")
+autoplay = true
+bus = &"Music"
+parameters/looping = true

@@ -1,0 +1,220 @@
+[gd_scene load_steps=26 format=4 uid="uid://bhhdhl5ja3uku"]
+
+[ext_resource type="Script" uid="uid://uqpbdsnwprc1" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://cddmadgxv0xrx" path="res://Assets/Characters/Players/Foxy/Spritesheet.png" id="1_v0iea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd4e3"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(0, 64, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqcod"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(33, 64, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igrcy"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(66, 64, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs7ks"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(99, 64, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6n3p"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(0, 64, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olqyp"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(33, 256, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dp3o"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(33, 160, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(0, 128, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(33, 128, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(0, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(33, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(66, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(99, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4iuc"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(0, 160, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(0, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(33, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(66, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(99, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(132, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukyrk"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(165, 32, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x3wgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd4e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqcod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igrcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs7ks")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6n3p")
+}],
+"loop": true,
+"name": &"climb_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olqyp")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dp3o")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvnsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t5aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgqql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkybt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4iuc")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8erm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ek2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx1dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gymyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu2lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukyrk")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(12, 17)
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_cvnsp"]
+data = PackedByteArray("cW9hZgAAIi4BAKxEFAAIGAAAAAAAAAAAAAAAAOAAQADx9vd0HmgFGeRBEsZHKNDG9g+Z0ct0Zg3xDx27nikVw/efeeGXNO4e9AZY9tu5EeThHT7/qmlxhvMUHIGISyCP8tN5c1V158z5ko0h10jhVfjdOCHDNuvc9AdYten4xCfw6+zl11j36v7LBKOPCiCU8g/4Tcnnl4/4FiFB2znzjvnkYve9fu4f+eu6xwQg+5bx52fqjxhUpvz3WZXJ7YOH5cOs542Wc0vzp6Xnl0/7jfDWnndeUXEO912/h64QcFX2TG2xjnEgR8QQbPJFBQOY94gpQl8tNkvxkAYlyRiR8PEKWyHBEaEQ9BQlggg+hOv2ADkX5TW3m/KEIBH6LqeJ8JIAEEeoNsb2CgEQACCDw+DZYKOICQAAgAEkAgw6tkE1Zd85VZZZd6BDXBQAIBBBoAgkckEkkknASCCCQQQRR/QRBGjKSXoD+skZNpAIekP6WDkWkEAR0JzbJZPNAIYI8E4ABAEAAgjQSCCQQCQTwLTJLBJJBPNSjIEAgkAggglRRAmmiCCCCvIIBIBOSKQAbAENNEEENEFwQQQQQQQQR/HJDZJBJBAIfhoAgggggggnurvvrvvrLCu+ssu++su+L6yxyyxxppwnLGnGmimnGh+eu+uuu++uH6767676y6zyASASASBigp0QABBBBBBBPXWWWWOVOWUs9999d999d+BIBIBBIBPqs30kkAgkEAlNCWmmmiCCCj8csaaacssakgRlgggggggjuWimnLGnGh+uu+e+uu++0gYxoIIkAgg+W45U4005ZSz3l331331lkEgZ0kEEAElMgwUwU0000Sn313l1ll330EgE9BMkgkk8Xa2WWGmGmiqaaaaKaaaasgEEgE8KEEBeimiGiCCCCj8ssaaaKYKaKy76yxpyxyzDgyAAQAQAQUwhRQAABAABHHLHPPXPOPXQSASAQQSBm29LJDTTTTTTPOWWWWNNNNEpZY5ZdZZY5SljjTljljTj8E8ktsENNEhvGiCCCCmCCCG6+u++u+++L676yy77764vvrvLvrLLvvIBORKQRIBBbMNNNNMANEM8JU0005Y00y33131ll331KWXWfXffWWUt9ZZY5Y5ZYyjTljTjTjTjHfPXXXffXXcdd99dZd9d9x11ll31ljllHfWWOWWOWWMU400U40440xjjTjjRRTjRFFONFFFONFEUU0E0UUQUARRRAAAABRTRDbLDDDLDHLAMMMMMMcMMMQwxwwxxwwxwDHDHDHDCCCAIIMcIMccccPHJFJIJIBBBPIT6yyxppyw7LGmnLLGnLC8+e++su+++K776yxyyxywnLLvrLHLGnCaaccsacaaKH6667766774brvvrrLvrLh+su+sscsscGyxyyxpyxywWnGnGnHGnGhKKcaKKcaKKFxoopxooopoSiimgmiiimgOmmGWGWGWGAYYY5YZ5YYYBhhjlnlhjhgEGGOGOGOGO4gEgEgYkoIlcowCQQ0QUwTll3331lljTOVOWNNOWWWMt99d999d5dSll331l331lKOWWOWOWWOMk5Y5Y04040xx3z311133zHfWXXfWXfXcdZd9Y5ZY5YxTjTjljljjTGNFONFOONFMY0UUU0UUUUxRRRTjRRTQADHTLDLLDLDAMsMMcscscsAwwyxwwwxwwDDHDDDHDHDAMcMMcM8scMbHDBJYYBJAJTRlohogggpouvnvvrLvvrCscsscsacacJpoppxpoppwfvrrrvvnvrh+uu++usu+sFyyxyxyxyywXLGnLHGnLHBacaccaKcaKEpxoopxooooWiiinGiiiABAAAKKIAAAKC6YZYYZYYY4BhhhhjhhnlgOGGemOGGOGA4ZZ5Z4YY4YBBBBBDhBBDgOOOOOMGMGMoEgEgEgcBEA+hEgigACmiisacaKacaaKH666y767674bLvrvrLvrLh+sscsacaccGxyxxpxopxwWnHGnHGiinBcaKKcaKKKaEooopoAAAAoLlphhlhjlhgWGGGGOGGGGAY4YYY4YYY4BjhjhhnlnhgGEGOOGOGOGA44QYY44444BBBhBBBBhBAEECEEECECEAIIIIIIIIIIAggggggggAsBOBJBBAIIITtFEEEFNNNMsZZY05Y5Y0yjTljTjTjTjHfPXXfXXfXcd9dd9Zd9d9x11ljll1lllGOWWWNOWNOMU0U4044044xTjjRRTjRRRFONFFFNFFFEM9NMsMtMMsAyywwywxywwDHLHLDHLDDEMscMMMMM8sQwwzywxwxwzDDCCHDCCCDEMcc8IIIIYIAgghgggggghgEEEEEEYJlhO2ySSQSQQQR3333113313HXfXfXfXfXcd9dd99dZd9Rl31l31ljllGOWNONONONMY40U440UU4xRRTjRRRTRRFFFFNFFFNBMUUUU0UUU0UQ0ywyywywwwDDDHDLDHDDAMcMMM8scMcAxwwxwwxwxxDDHDHDHDCDEMIMIIIIIIIQggggggQgQSBCGBBCGBCGAEEEEEEEEEELBIHJBIYIJBKeryyqyyyywrGnGmnGnGmhue+uu+u+uuH76767676y4bLLrLLLLHLBsssaacacacFpxxpxxpxxoSinHGiinGihKKaKKKKaKKD6aYZZZYZYYBhljhlhhhhgGOGGGGOGOGAY4YY4YY4Y4BnhhhnhhBjgOGOGOGOOEEAY444wYQQQQBhDBBBBBBBAEECECCCCCEwEEEgggg8BBckAiCiCCCAQEArEQOLgXI4+/kaeUh5P/6OQcX/MMhuSSc+scsscscKxyyxxpyxywfrrrvrvrvrh+u+u+u+u+uH766y767764bLHLLHLLrLBssaacacaccGxxpxxpxoooXGiinGiinGhKKKaKKKKaKEopoooogAAABhhlhlhhhhgOGGGGeGGGGA4YY44YZ4YYHhhjhjhhBjgOGOOGOOEEGAY444wYQQQYBDBBhDBBBAoBBHJAIIIIIE5y76676y6wbLvrLHLLGnBscscsacacaFxxopxxpxxwWnHGiiinHGhKKcaKKKaKKEopooopooooPhplhlhlhhgGGGGOGWGeGAYYY4YZ4YZ4FjhjhhjhjhAGOOGOEEGOEAQQQQQQwQQQDDhDBBAhAggECCECCCCCCAQIoIIIIIIIAgggAgggAggCACCKKKCACsEEEEEEEEYlu3SySSSCQQSdjlljljljlKNONONNOOWMdddd9d9d9dx131313311lHfXfWXfWWOUY5ZY5ZY5ZYxTjTjTjTjjTGONOONFFONEUUU0UUU0UURRTRRRTRRRTFFFEAAAAAFEMMsMMMscMcAwwyxwwxwwwDHDDHHDDHDEMMMcMccIIIAxwggggghggCGCCCBCBCBAEIYEEEEEEEaBBBHJJJJJBL/3mmiqqqpofvPvrvvrrvh+u+u+u+u+sG6yyxyyxyywWnLHLGnGnHBscacaKcaKKFooopooopooSimiiimiiig+e2WWWGWGWAYYY5YYYYYYBjhhnhhhhhgOGOOGOOGOGAY4Y4Y444Y4DhBhDhBBBBAEEMECEEMMEAIQIIQIIIIIBAiggggggggCCCCACCCKKQEEEEEEEEZArQwwQwSQSQRLLTDDDTDTBCcdddeddeecJ55151111xxDDVVHRAIIBAAEEAAgAEAACAAQACAAQAAIABAAIABAAAgAEAAgAEAACAAQACAAQAAIABAAIABAAAgAEAAgAEAACAAQACAAQAAIABAAIABAAAgAEAAgAEAACAAQACAAQAAIABAAIABAAAgAEAAgAEAACAAQACAAQAAIABAAIABAAAgAEAAgAEAACAAQACAAQAAIABAAIABAAAgAEAAgAEAACAAQACAAQAAIABAAIABAAAgAEAAgAEAACAAQACAAQAAIABAAIABAAAgAEAAgAEAACAAQACAAQAAIABAAIABAAAgAEAAgAEAACAAQACAAQAAAIAABAAAIAAAEAAAgAAEAAACAAAQAACAAABAAAIAABAAAAgAAEAAACAAAQAACAAABAAAIAABAAAAgAAEAAAgAAAQAACAAAQAAAIAABAAAIAAAEAAAgAAEAAACAAAQAAAIAABAAAIAAAEAAAgAAEAAACAAAQAACAAABAAAIAABAAAAgAAEAAAgAAAQAACAAAQAAAIAABAAAAgAAEAAAgAAAQAACAAAQAAAIAABAAAIAAAEAAAgAAEAAACAAAQAACAAABAAAIAABAAAAgAAEAAACAAAQAACAAABAAAIAABAAAAgAAEAAAgAAAQAACAAAQAAAIAABAAAIAAAEAAAgAAEAAACAAAQAAAIAABAAAIAAAEAAAgAAEAAACAAAQAACAAABAAAIAABAAAAgAAEAAAgAAAQAACAAAQAAAIAABAAAAgAAEAAAgAAAQAACAAAQAAAIAABAAAIAAAEAAAgAAEAAACAAAQAACAAABAAAIAABAAAAgAAEAAACAAAQAACAAABAAAIAABAAAAgAAEAAAgAAAQAACAAAQAAAIAABAAAIAAAEAAAgAAEAAACAAAQAAAIAABAAAIAAAEAAAgAAEAAACAAAQAACAAABAAAIAABAAAAgAAEAAAgAAAQAACAAAQAAAIAABAAAAgAAEAAAgAAAQAACAAAQAAAIAABAAAIAAAEAAAgAAEAAACAAAQAACAAABAAAIAABAAAAgAAEAAACAAAQAACAAABAAAIAABAAAAgAAEAAAAA=")
+format = 3
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 10
+collision_layer = 2
+script = ExtResource("1_cvnsp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -16)
+sprite_frames = SubResource("SpriteFrames_x3wgy")
+animation = &"run"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_cvnsp")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -10)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Death_Timer" type="Timer" parent="."]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamWAV_cvnsp")
+bus = &"VFX"

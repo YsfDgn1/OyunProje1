@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddso4nqw745dx"
+path="res://.godot/imported/PointCollect.mp3-48bf595e1c9c7ddcfb84eab9f161d6c2.mp3str"
+
+[deps]
+
+source_file="res://Assets/Props Items and VFX/VFX/PointCollect.mp3"
+dest_files=["res://.godot/imported/PointCollect.mp3-48bf595e1c9c7ddcfb84eab9f161d6c2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

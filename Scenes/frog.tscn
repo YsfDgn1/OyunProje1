@@ -1,0 +1,148 @@
+[gd_scene load_steps=20 format=3 uid="uid://cgaxgsyljr52g"]
+
+[ext_resource type="Texture2D" uid="uid://cgnc1jpwsfy0g" path="res://Assets/Characters/Enemies and NPC/frog/Spritesheets/frog-idle.png" id="1_4ygq6"]
+[ext_resource type="Script" uid="uid://bo3asbhfh3su7" path="res://Scripts/frog.gd" id="1_xvrdk"]
+[ext_resource type="Texture2D" uid="uid://txskpo8rd4sp" path="res://Assets/Props Items and VFX/enemy-death 2/spritesheet.png" id="2_xvrdk"]
+[ext_resource type="Texture2D" uid="uid://be68f1m52ephe" path="res://Assets/Characters/Enemies and NPC/frog/Spritesheets/frog-jump.png" id="3_anyvr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poaat"]
+atlas = ExtResource("2_xvrdk")
+region = Rect2(0, 0, 28, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oox6q"]
+atlas = ExtResource("2_xvrdk")
+region = Rect2(28, 0, 28, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bqyd"]
+atlas = ExtResource("2_xvrdk")
+region = Rect2(56, 0, 28, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3onm"]
+atlas = ExtResource("2_xvrdk")
+region = Rect2(84, 0, 28, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ygq6"]
+atlas = ExtResource("1_4ygq6")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3muq"]
+atlas = ExtResource("1_4ygq6")
+region = Rect2(35, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvrdk"]
+atlas = ExtResource("1_4ygq6")
+region = Rect2(70, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anyvr"]
+atlas = ExtResource("1_4ygq6")
+region = Rect2(105, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdff1"]
+atlas = ExtResource("3_anyvr")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbuj8"]
+atlas = ExtResource("3_anyvr")
+region = Rect2(35, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igvty"]
+atlas = ExtResource("3_anyvr")
+region = Rect2(70, 0, 35, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_poaat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poaat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oox6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bqyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3onm")
+}],
+"loop": false,
+"name": &"death",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ygq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3muq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvrdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anyvr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdff1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbuj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igvty")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anyvr"]
+size = Vector2(27, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3muq"]
+size = Vector2(25, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvrdk"]
+size = Vector2(20, 2)
+
+[node name="frog" type="CharacterBody2D"]
+script = ExtResource("1_xvrdk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -11)
+sprite_frames = SubResource("SpriteFrames_poaat")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(1.5, -8.5)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_anyvr")
+debug_color = Color(0.843137, 0, 1, 0.419608)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -8)
+shape = SubResource("RectangleShape2D_c3muq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -17)
+shape = SubResource("RectangleShape2D_xvrdk")
+debug_color = Color(0.984314, 0, 0, 0.419608)
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

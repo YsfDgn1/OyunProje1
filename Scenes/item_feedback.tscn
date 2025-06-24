@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://b040xuhsymrct"]
+
+[ext_resource type="Script" uid="uid://dpw8by14duerc" path="res://Scripts/feedback.gd" id="1_irucj"]
+[ext_resource type="Texture2D" uid="uid://cetu73s8ta6v5" path="res://Assets/Props Items and VFX/Sunnyland FX/Spritesheets/item-feedback.png" id="2_olsrn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg6y7"]
+atlas = ExtResource("2_olsrn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pvo1"]
+atlas = ExtResource("2_olsrn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imq5b"]
+atlas = ExtResource("2_olsrn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e3pc"]
+atlas = ExtResource("2_olsrn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0f7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg6y7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pvo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imq5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e3pc")
+}],
+"loop": false,
+"name": &"feedback",
+"speed": 8.0
+}]
+
+[node name="ItemFeedback" type="Node2D"]
+script = ExtResource("1_irucj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_o0f7o")
+animation = &"feedback"

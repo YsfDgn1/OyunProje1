@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlp5av2blnesv"]
+
+[ext_resource type="Script" uid="uid://bmntswbh1ihvt" path="res://Scripts/key_y.gd" id="1_ffmxq"]
+[ext_resource type="Texture2D" uid="uid://vawxwkcqdeu0" path="res://Assets/Props Items and VFX/Sunnyland items/KeyY.png" id="2_1cp01"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vc4o"]
+size = Vector2(12, 6)
+
+[node name="KeyY" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_ffmxq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_1cp01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1vc4o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

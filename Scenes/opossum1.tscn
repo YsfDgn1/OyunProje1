@@ -1,0 +1,133 @@
+[gd_scene load_steps=18 format=3 uid="uid://xekvp6e682w8"]
+
+[ext_resource type="Script" uid="uid://dp5spgjxkybtf" path="res://Scripts/opossum1.gd" id="1_4ef3m"]
+[ext_resource type="Texture2D" uid="uid://txskpo8rd4sp" path="res://Assets/Props Items and VFX/enemy-death 2/spritesheet.png" id="2_gh7pt"]
+[ext_resource type="Texture2D" uid="uid://cdkneere7806a" path="res://Assets/Characters/Enemies and NPC/Opossum/spritesheet.png" id="3_k04q4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wyhk"]
+atlas = ExtResource("2_gh7pt")
+region = Rect2(0, 0, 28, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_621i8"]
+atlas = ExtResource("2_gh7pt")
+region = Rect2(28, 0, 28, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0rvr"]
+atlas = ExtResource("2_gh7pt")
+region = Rect2(56, 0, 28, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgwjr"]
+atlas = ExtResource("2_gh7pt")
+region = Rect2(84, 0, 28, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6mmf"]
+atlas = ExtResource("3_k04q4")
+region = Rect2(0, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5suo1"]
+atlas = ExtResource("3_k04q4")
+region = Rect2(36, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs12f"]
+atlas = ExtResource("3_k04q4")
+region = Rect2(72, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbuxd"]
+atlas = ExtResource("3_k04q4")
+region = Rect2(108, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y25aj"]
+atlas = ExtResource("3_k04q4")
+region = Rect2(144, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtqt1"]
+atlas = ExtResource("3_k04q4")
+region = Rect2(180, 0, 36, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eul73"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wyhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_621i8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0rvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgwjr")
+}],
+"loop": false,
+"name": &"death",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6mmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5suo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs12f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbuxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y25aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtqt1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frbck"]
+size = Vector2(27, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifnk4"]
+size = Vector2(22, 2.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kg357"]
+size = Vector2(30, 16)
+
+[node name="Opossum" type="CharacterBody2D"]
+script = ExtResource("1_4ef3m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eul73")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 4.5)
+shape = SubResource("RectangleShape2D_frbck")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, -6.75)
+shape = SubResource("RectangleShape2D_ifnk4")
+debug_color = Color(0.968627, 0, 0, 0.419608)
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-3, 3)
+shape = SubResource("RectangleShape2D_kg357")
+debug_color = Color(1, 0, 1, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
